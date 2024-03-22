@@ -12,6 +12,12 @@
 >
   Add Server
 </button>
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!--<p>{{ serverCreationStatus }}</p>-->
+<!--<p *ngIf="serverCreated">Server vas created, server is {{ serverName }}</p>-->
+@if (serverCreated) {
+  <p>Server vas created, server is {{ serverName }}</p>
+}
+<!--<app-server *ngFor="let server of servers"></app-server>-->
+@for (server of servers; track server) {
+  <app-server></app-server>
+}
